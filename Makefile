@@ -1,6 +1,6 @@
 CUDA_PREFIX=/usr/local/cuda
 CXXFLAGS=-I. `pkg-config --cflags opencv` -I${CUDA_PREFIX}/include -DGPU -DCUDNN -O2 -msse3 -msse4
-LIBS=`pkg-config --libs opencv` -Ldarknet -ldarknet -lboost_program_options -lboost_filesystem -lboost_system -L${CUDA_PREFIX}/lib64 -lcudart -lcuda -lcublas -lcurand -lcudnn
+LIBS=`pkg-config --libs opencv` -Ldarknet -ldarknet -lboost_program_options -lboost_filesystem -lboost_system -L${CUDA_PREFIX}/lib64 -lcudart -lcuda -lcublas -lcurand -lcudnn -ljpeg -ljasper
 OBJS=$(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 all: demo
